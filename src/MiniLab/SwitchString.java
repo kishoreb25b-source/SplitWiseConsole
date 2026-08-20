@@ -2,7 +2,7 @@ package MiniLab;
 
 import java.util.Scanner;
 
-public class IFELSE {
+public class SwitchString {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean running=true; // Declare a boolean to run the loop
@@ -24,17 +24,18 @@ public class IFELSE {
             System.out.println("2. View Expense");
             System.out.println("3. Exit");
             System.out.print("Enter Choice:");
-            int choice = sc.nextInt();    // Get the value to go to which case in string
+            String choice = sc.nextLine();    // Get the value to go to which case in string
 
             // Using switch function go to the case 1 or 2 or 3 or default
+            switch (choice) {
 
-                if(choice==1) {                        // Use to Add Expense With new information
+                case "1" -> {                        // Use to Add Expense With new information
                     System.out.println();
                     System.out.println("Recording expense (sample data)...");
                     System.out.println("Expense saved: Dinner | amount=1200.0 | people=4");
                 }
 
-                else if(choice==2){               // Use to show the Expense to User
+                case "2" -> {               // Use to show the Expense to User
                     System.out.println();
                     System.out.println("--- Expense Summary ---");
                     System.out.println("Reason for the Expense:" + REASON_EXPENSE);
@@ -44,16 +45,16 @@ public class IFELSE {
                     System.out.println("The Share Per Person:" + SHARE_PER_PERSON);
                 }
 
-                else if (choice ==3){     //If user want to exit case 3  work
+                case "3" -> {     //If user want to exit case 3  work
                     System.out.println("=== Thanks for coming ===");
                     running = false; // to stop the while loop
                 }
-                else {   // use to tell the use only 1,2,3 is allowed
+                default -> {   // use to tell the use only 1,2,3 is allowed
                     System.out.println("Invalid choice. Please enter 1, 2, or 3.");
                 }
 
 
             }
         }
-
+    }
 }
